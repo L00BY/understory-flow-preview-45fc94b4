@@ -35,12 +35,25 @@ test('service worker caches the core offline experience', () => {
   assert.match(sw, /addEventListener\('fetch'/);
 });
 
-test('settings keep notifications off by default and require explicit permission', () => {
+test('app opens into a connected Home, journal, clarity, and settings shell', () => {
+  const html = read('index.html');
+  assert.match(html, /function renderHome/);
+  assert.match(html, /id="homeSpiral"/);
+  assert.match(html, /id="homeClarity"/);
+  assert.match(html, /id="homeJournal"/);
+  assert.match(html, /function renderJournal/);
+  assert.match(html, /Save this piece/);
+});
+
+test('settings contain local privacy and installation controls but no notifications', () => {
   const html = read('index.html');
   assert.match(html, /id="settingsButton"/);
-  assert.match(html, /notifications:false/);
   assert.match(html, /function renderSettings/);
-  assert.match(html, /Notification\.requestPermission\(\)/);
-  assert.match(html, /Only reminders you create/);
+  assert.doesNotMatch(html, /Notification\.requestPermission/);
+  assert.doesNotMatch(html, /Enable notifications/);
   assert.match(html, /nothing is sent to a server/i);
+});
+
+test('offline cache is bumped for the connected shell', () => {
+  assert.match(read('service-worker.js'), /understory-shell-v2/);
 });

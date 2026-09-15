@@ -13,14 +13,20 @@ This prototype now includes:
 - iPhone installation guidance through Safari → Share → Add to Home Screen
 - A Settings screen accessible from the gear button
 
-## Settings and notifications
+## Connected app shell
 
-- Notifications are off by default
-- Permission is requested only after pressing **Enable notifications**
-- On iPhone, notification permission requires opening the installed Home Screen app
-- Private lock-screen wording is on by default and stored locally
-- Only user-created reminders will be eligible to notify
-- Individual reminder creation and background Web Push delivery are explicitly marked as not built yet
+The app now opens on Home rather than dropping directly into the understanding flow. Home connects:
+
+- **I’m spiralling** → support-choice screen
+- **Help me understand what happened** → six-step clarity flow
+- **My journal** → locally saved journal pieces
+- **Settings** → privacy, installation, offline status, and confirmed local-data clearing
+
+The spiral support screen exposes pause-before-acting, carry-me-through options, understanding, closeness/reassurance, and Ask Binch. The first pause route and understanding route retain their existing functionality.
+
+## Settings
+
+Notification support was removed at Courtney’s request. Settings contains no notification permission request or reminder controls.
 
 ## Privacy
 
