@@ -32,9 +32,13 @@ Every screen now leaves its main question/heading directly on the botanical page
 
 This is now a four-step guided route rather than an activity list. It records what is loudest emotionally/physically, what happened immediately beforehand, possible contributors, and the feared meaning. A deterministic local branching summary offers possible explanations, immediate actions, and longer-term ways to work with recurring patterns. It explicitly allows internal alarm and a genuine external problem to coexist. A one-minute in-page sequence changes prompts every 15 seconds and lets the user return to the explanation or choose different help.
 
-## My journal self-map
+## My journal graph
 
-My journal now opens as a branching self-map with **Me** at the centre and eight category stems. Category screens hold neutral trait cores that split into green **Good that comes from it** and rust **Bad that comes from it** branches. New traits and both outcomes can be added locally, revisited by category, and removed only after confirmation. Earlier plain journal pieces remain visible.
+My journal now uses a radial SVG node network inspired by Courtney’s reference image. **Me** is the large central node; eight colour-coded categories radiate outward; saved traits extend from categories; green good-outcome and rust bad-outcome dots extend from traits. Thin lines show every direct relationship. The canvas supports pointer drag/pan, wheel zoom, two-finger pinch zoom, plus/minus controls, and reset. Every node is clickable and keyboard-focusable; its detail area shows the node type, full text, and all directly connected nodes. Trait details also allow editing or confirmed removal. Existing local self-map data feeds the network, and older plain journal pieces remain visible below it.
+
+## Interactive locked draft
+
+Pause step two now contains only actions Understory can actively help perform. **Hide the draft**, **Put my phone down**, and **Move to another room** were removed. Selecting **Write what I want to do without doing it** opens a real local draft editor tied to what is on hold. Locking saves the text locally, removes it from view, and displays a sealed box with deliberate controls to continue the pause, reopen/revise, or delete after confirmation. A persistent Home shortcut appears while a draft is locked. The lock is a behavioural/visual pause, not cryptographic encryption or a claim that Understory can prevent the user acting elsewhere.
 
 ## Settings
 

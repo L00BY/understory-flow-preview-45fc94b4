@@ -55,14 +55,28 @@ test('settings contain local privacy and installation controls but no notificati
   assert.match(html, /nothing is sent to a server/i);
 });
 
-test('journal is an interactive self-map with good and bad outcome branches', () => {
+test('journal is a zoomable clickable node network with connection details', () => {
   const html = read('index.html');
-  assert.match(html, /function renderSelfMap/);
-  assert.match(html, /function renderMapAdd/);
-  assert.match(html, /class="meNode"/);
+  assert.match(html, /function renderGraph/);
+  assert.match(html, /function graphData/);
+  assert.match(html, /id="mapSvg"/);
+  assert.match(html, /pointerdown/);
+  assert.match(html, /touches\.length===2/);
+  assert.match(html, /data-graph-node/);
+  assert.match(html, /Connected to/);
   assert.match(html, /Good that comes from it/);
   assert.match(html, /Bad that comes from it/);
-  assert.match(html, /state\.selfMap/);
+});
+
+test('pause flow provides a real lockable draft and removes dead-end options', () => {
+  const html = read('index.html');
+  assert.match(html, /function renderDraftBox/);
+  assert.match(html, /function renderLockedDraft/);
+  assert.match(html, /Lock this draft away/);
+  assert.match(html, /state\.pause\.draft/);
+  assert.doesNotMatch(html, /Hide the draft/);
+  assert.doesNotMatch(html, /Put my phone down/);
+  assert.doesNotMatch(html, /Move to another room/);
 });
 
 test('carry-through route explores the trigger and provides tailored support', () => {
@@ -83,6 +97,6 @@ test('every screen paperizes the answer and interaction area, not question headi
   assert.doesNotMatch(html, /\.stage h1,\.homeBrand/);
 });
 
-test('offline cache is bumped for corrected paper placement', () => {
-  assert.match(read('service-worker.js'), /understory-shell-v4/);
+test('offline cache is bumped for graph and locked-draft update', () => {
+  assert.match(read('service-worker.js'), /understory-shell-v5/);
 });
