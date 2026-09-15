@@ -24,9 +24,17 @@ The app now opens on Home rather than dropping directly into the understanding f
 
 The spiral support screen exposes pause-before-acting, carry-me-through options, understanding, closeness/reassurance, and Ask Binch. The first pause route and understanding route retain their existing functionality.
 
-## Universal heading paper
+## Interaction paper
 
-Every screen now places its main heading on the same reusable physical-paper treatment: warm fibrous texture, restrained coffee marks/ring, irregular torn-looking polygon edges, and a soft drop shadow. It applies to Home, the spiral hub, support screens, the understanding route, pause setup/review/active screens, My journal, and Settings. Mobile checks confirmed no heading overflow at 320px width.
+Every screen now leaves its main question/heading directly on the botanical page and places the descriptive text, answers, fields, options, and controls together on one reusable physical-paper sheet beneath it. The sheet uses warm fibrous texture, restrained coffee marks, irregular torn-looking edges, and a soft shadow. Home follows Courtney’s annotated boundary: the Understory wordmark remains above, while the description and three navigation rows sit on the large sheet.
+
+## Carry me through the feeling
+
+This is now a four-step guided route rather than an activity list. It records what is loudest emotionally/physically, what happened immediately beforehand, possible contributors, and the feared meaning. A deterministic local branching summary offers possible explanations, immediate actions, and longer-term ways to work with recurring patterns. It explicitly allows internal alarm and a genuine external problem to coexist. A one-minute in-page sequence changes prompts every 15 seconds and lets the user return to the explanation or choose different help.
+
+## My journal self-map
+
+My journal now opens as a branching self-map with **Me** at the centre and eight category stems. Category screens hold neutral trait cores that split into green **Good that comes from it** and rust **Bad that comes from it** branches. New traits and both outcomes can be added locally, revisited by category, and removed only after confirmation. Earlier plain journal pieces remain visible.
 
 ## Settings
 

@@ -42,7 +42,8 @@ test('app opens into a connected Home, journal, clarity, and settings shell', ()
   assert.match(html, /id="homeClarity"/);
   assert.match(html, /id="homeJournal"/);
   assert.match(html, /function renderJournal/);
-  assert.match(html, /Save this piece/);
+  assert.match(html, /Add a part of me/);
+  assert.match(html, /Grow this branch/);
 });
 
 test('settings contain local privacy and installation controls but no notifications', () => {
@@ -54,14 +55,34 @@ test('settings contain local privacy and installation controls but no notificati
   assert.match(html, /nothing is sent to a server/i);
 });
 
-test('every screen uses the rugged coffee-stained heading treatment', () => {
+test('journal is an interactive self-map with good and bad outcome branches', () => {
   const html = read('index.html');
-  assert.match(html, /\.stage h1,\.homeBrand/);
-  assert.match(html, /radial-gradient/);
-  assert.match(html, /clip-path:polygon/);
-  assert.match(html, /\.stage h1:after,\.homeBrand:after/);
+  assert.match(html, /function renderSelfMap/);
+  assert.match(html, /function renderMapAdd/);
+  assert.match(html, /class="meNode"/);
+  assert.match(html, /Good that comes from it/);
+  assert.match(html, /Bad that comes from it/);
+  assert.match(html, /state\.selfMap/);
 });
 
-test('offline cache is bumped for the universal paper treatment', () => {
-  assert.match(read('service-worker.js'), /understory-shell-v3/);
+test('carry-through route explores the trigger and provides tailored support', () => {
+  const html = read('index.html');
+  assert.match(html, /const carrySteps/);
+  assert.match(html, /function renderCarry/);
+  assert.match(html, /What happened right before it got this loud/);
+  assert.match(html, /Why this may be happening/);
+  assert.match(html, /Stay with me for one minute/);
+  assert.match(html, /function renderCarryStay/);
+});
+
+test('every screen paperizes the answer and interaction area, not question headings', () => {
+  const html = read('index.html');
+  assert.match(html, /function paperize/);
+  assert.match(html, /\.answerPaper/);
+  assert.match(html, /clip-path:polygon/);
+  assert.doesNotMatch(html, /\.stage h1,\.homeBrand/);
+});
+
+test('offline cache is bumped for corrected paper placement', () => {
+  assert.match(read('service-worker.js'), /understory-shell-v4/);
 });
