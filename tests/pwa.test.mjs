@@ -55,17 +55,41 @@ test('settings contain local privacy and installation controls but no notificati
   assert.match(html, /nothing is sent to a server/i);
 });
 
-test('journal is a zoomable clickable node network with connection details', () => {
+test('journal graph uses stable camera, fixed details, large hit targets, and tap-to-centre', () => {
   const html = read('index.html');
-  assert.match(html, /function renderGraph/);
-  assert.match(html, /function graphData/);
-  assert.match(html, /id="mapSvg"/);
-  assert.match(html, /pointerdown/);
-  assert.match(html, /touches\.length===2/);
-  assert.match(html, /data-graph-node/);
-  assert.match(html, /Connected to/);
-  assert.match(html, /Good that comes from it/);
-  assert.match(html, /Bad that comes from it/);
+  assert.match(html, /function clampGraphCamera/);
+  assert.match(html, /function clientToGraph/);
+  assert.match(html, /setAttribute\('viewBox'/);
+  assert.match(html, /class="graphHit"/);
+  assert.match(html, /function focusGraphNode/);
+  assert.match(html, /id="graphHome"/);
+  assert.doesNotMatch(html, /<text class="graphLabel"/);
+  assert.match(html, /\.graphViewport\{height:250px;min-height:250px;flex-shrink:0/);
+  assert.match(html, /touch-action:none/);
+});
+
+test('spiralling starts with one shared open context instead of a support wizard', () => {
+  const html = read('index.html');
+  assert.match(html, /Tell me what’s happening/);
+  assert.match(html, /id="spiralContext"/);
+  assert.match(html, /state\.spiral\.context/);
+  assert.match(html, /function renderSpiralPaths/);
+  assert.match(html, /function renderImpulseHold/);
+});
+
+test('impulsive route goes from held action directly to draft editor', () => {
+  const html = read('index.html');
+  assert.match(html, /id="heldAction"/);
+  assert.match(html, /renderDraftBox\(\)/);
+  assert.match(html, /Keep it locked and return home/);
+  assert.match(html, /Optional pause setup/);
+});
+
+test('carry-through is immediate support and does not repeat trigger analysis', () => {
+  const html = read('index.html');
+  assert.match(html, /function renderCarryNow/);
+  assert.match(html, /No more questions first/);
+  assert.match(html, /Stay with this screen/);
 });
 
 test('pause flow provides a real lockable draft and removes dead-end options', () => {
@@ -79,16 +103,6 @@ test('pause flow provides a real lockable draft and removes dead-end options', (
   assert.doesNotMatch(html, /Move to another room/);
 });
 
-test('carry-through route explores the trigger and provides tailored support', () => {
-  const html = read('index.html');
-  assert.match(html, /const carrySteps/);
-  assert.match(html, /function renderCarry/);
-  assert.match(html, /What happened right before it got this loud/);
-  assert.match(html, /Why this may be happening/);
-  assert.match(html, /Stay with me for one minute/);
-  assert.match(html, /function renderCarryStay/);
-});
-
 test('every screen paperizes the answer and interaction area, not question headings', () => {
   const html = read('index.html');
   assert.match(html, /function paperize/);
@@ -97,6 +111,6 @@ test('every screen paperizes the answer and interaction area, not question headi
   assert.doesNotMatch(html, /\.stage h1,\.homeBrand/);
 });
 
-test('offline cache is bumped for graph and locked-draft update', () => {
-  assert.match(read('service-worker.js'), /understory-shell-v5/);
+test('offline cache is bumped for centred graph and shared spiral context', () => {
+  assert.match(read('service-worker.js'), /understory-shell-v6/);
 });

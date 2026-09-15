@@ -28,13 +28,13 @@ The spiral support screen exposes pause-before-acting, carry-me-through options,
 
 Every screen now leaves its main question/heading directly on the botanical page and places the descriptive text, answers, fields, options, and controls together on one reusable physical-paper sheet beneath it. The sheet uses warm fibrous texture, restrained coffee marks, irregular torn-looking edges, and a soft shadow. Home follows Courtney’s annotated boundary: the Understory wordmark remains above, while the description and three navigation rows sit on the large sheet.
 
-## Carry me through the feeling
+## I’m spiralling
 
-This is now a four-step guided route rather than an activity list. It records what is loudest emotionally/physically, what happened immediately beforehand, possible contributors, and the feared meaning. A deterministic local branching summary offers possible explanations, immediate actions, and longer-term ways to work with recurring patterns. It explicitly allows internal alarm and a genuine external problem to coexist. A one-minute in-page sequence changes prompts every 15 seconds and lets the user return to the explanation or choose different help.
+The route begins with one open **Tell me what’s happening** field. That entry becomes shared local context for distinct support paths instead of being collected repeatedly. **I might do something impulsive** asks only what is being held, then opens the real draft editor immediately. **Stay with me through the peak** begins with low-demand support and an optional one-minute guided screen without trigger analysis. **Help me understand why this hit me** reuses the shared entry as the event and begins with the next distinct question. A later-action draft and reviewed Ask Binch handoff also reuse the same context.
 
 ## My journal graph
 
-My journal now uses a radial SVG node network inspired by Courtney’s reference image. **Me** is the large central node; eight colour-coded categories radiate outward; saved traits extend from categories; green good-outcome and rust bad-outcome dots extend from traits. Thin lines show every direct relationship. The canvas supports pointer drag/pan, wheel zoom, two-finger pinch zoom, plus/minus controls, and reset. Every node is clickable and keyboard-focusable; its detail area shows the node type, full text, and all directly connected nodes. Trait details also allow editing or confirmed removal. Existing local self-map data feeds the network, and older plain journal pieces remain visible below it.
+My journal uses a radial SVG node network inspired by Courtney’s reference image. **Me** is the central node; colour-coded categories radiate outward; traits extend from categories; green helpful and rust painful outcome dots extend from traits. The revised graph uses a bounded SVG camera rather than translating the whole graph layer. Pinch/wheel zoom preserves the focal point, drag distance scales correctly with zoom, and tapping a node centres its branch. No text moves inside the SVG: full node details and direct connections stay in one fixed centred panel below a non-shrinking 250px canvas. Invisible hit circles enlarge small-dot touch targets, and a **Me** control restores the centre.
 
 ## Interactive locked draft
 
