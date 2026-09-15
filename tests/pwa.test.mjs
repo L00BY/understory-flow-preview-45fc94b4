@@ -55,15 +55,18 @@ test('settings contain local privacy and installation controls but no notificati
   assert.match(html, /nothing is sent to a server/i);
 });
 
-test('journal graph uses stable camera, fixed details, large hit targets, and tap-to-centre', () => {
+test('journal graph is immovable while reading and only explicit controls change zoom', () => {
   const html = read('index.html');
   assert.match(html, /function clampGraphCamera/);
-  assert.match(html, /function clientToGraph/);
   assert.match(html, /setAttribute\('viewBox'/);
   assert.match(html, /class="graphHit"/);
-  assert.match(html, /function focusGraphNode/);
+  assert.match(html, /function selectGraphNode/);
+  assert.match(html, /function zoomSelectedNode/);
   assert.match(html, /id="graphHome"/);
   assert.doesNotMatch(html, /<text class="graphLabel"/);
+  assert.doesNotMatch(html, /addEventListener\('pointerdown'/);
+  assert.doesNotMatch(html, /addEventListener\('touchmove'/);
+  assert.match(html, /\.stage\.graphStage\{overflow:hidden;overscroll-behavior:none/);
   assert.match(html, /\.graphViewport\{height:250px;min-height:250px;flex-shrink:0/);
   assert.match(html, /touch-action:none/);
 });
@@ -112,5 +115,5 @@ test('every screen paperizes the answer and interaction area, not question headi
 });
 
 test('offline cache is bumped for centred graph and shared spiral context', () => {
-  assert.match(read('service-worker.js'), /understory-shell-v6/);
+  assert.match(read('service-worker.js'), /understory-shell-v7/);
 });

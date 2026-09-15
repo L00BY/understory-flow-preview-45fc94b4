@@ -34,7 +34,7 @@ The route begins with one open **Tell me what’s happening** field. That entry 
 
 ## My journal graph
 
-My journal uses a radial SVG node network inspired by Courtney’s reference image. **Me** is the central node; colour-coded categories radiate outward; traits extend from categories; green helpful and rust painful outcome dots extend from traits. The revised graph uses a bounded SVG camera rather than translating the whole graph layer. Pinch/wheel zoom preserves the focal point, drag distance scales correctly with zoom, and tapping a node centres its branch. No text moves inside the SVG: full node details and direct connections stay in one fixed centred panel below a non-shrinking 250px canvas. Invisible hit circles enlarge small-dot touch targets, and a **Me** control restores the centre.
+My journal uses a radial SVG node network inspired by Courtney’s reference image. **Me** is the central node; colour-coded categories radiate outward; traits extend from categories; green helpful and rust painful outcome dots extend from traits. The revised graph uses a bounded SVG camera and deliberately has no free drag or pinch movement. Tapping a node updates its details without moving the graph. Only the explicit plus/minus controls change zoom, centred on the selected node, while **Me** restores the full map. The whole journal graph screen is locked against vertical scrolling during interaction. No text moves inside the SVG: full node details and direct connections stay in one fixed centred panel below a non-shrinking 250px canvas. Invisible hit circles enlarge small-dot touch targets.
 
 ## Interactive locked draft
 
