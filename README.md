@@ -24,6 +24,10 @@ The app now opens on Home rather than dropping directly into the understanding f
 
 The spiral support screen exposes pause-before-acting, carry-me-through options, understanding, closeness/reassurance, and Ask Binch. The first pause route and understanding route retain their existing functionality.
 
+## Universal heading paper
+
+Every screen now places its main heading on the same reusable physical-paper treatment: warm fibrous texture, restrained coffee marks/ring, irregular torn-looking polygon edges, and a soft drop shadow. It applies to Home, the spiral hub, support screens, the understanding route, pause setup/review/active screens, My journal, and Settings. Mobile checks confirmed no heading overflow at 320px width.
+
 ## Settings
 
 Notification support was removed at Courtney’s request. Settings contains no notification permission request or reminder controls.

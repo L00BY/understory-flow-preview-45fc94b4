@@ -54,6 +54,14 @@ test('settings contain local privacy and installation controls but no notificati
   assert.match(html, /nothing is sent to a server/i);
 });
 
-test('offline cache is bumped for the connected shell', () => {
-  assert.match(read('service-worker.js'), /understory-shell-v2/);
+test('every screen uses the rugged coffee-stained heading treatment', () => {
+  const html = read('index.html');
+  assert.match(html, /\.stage h1,\.homeBrand/);
+  assert.match(html, /radial-gradient/);
+  assert.match(html, /clip-path:polygon/);
+  assert.match(html, /\.stage h1:after,\.homeBrand:after/);
+});
+
+test('offline cache is bumped for the universal paper treatment', () => {
+  assert.match(read('service-worker.js'), /understory-shell-v3/);
 });
