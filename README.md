@@ -8,6 +8,12 @@ A clickable six-step acute-support route for separating events, meanings, knowle
 - Step 4 groups expanded choices into feelings, body reactions, and urges
 - Step 5 includes a broader set of emotional, relational, practical, and protective needs
 - Step 6 asks “What do you want to do next?” and uses literal action wording
+- Choosing **Wait before I do anything** opens a working three-step pause setup
+- The pause records what is on hold, what may help, and when to return
+- **Return when I choose** is selected by default
+- Optional 10, 20, 30, or 60 minute in-page timers create no notifications
+- Active pauses survive page reloads through localStorage
+- Active pauses can be reviewed, continued, or ended without failure language
 - Forward and back navigation
 - Skip and “I don’t know” at every step
 - Multi-select feelings/urges and needs
