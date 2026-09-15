@@ -4,9 +4,12 @@
 A clickable six-step acute-support route for separating events, meanings, knowledge gaps, internal reactions, needs, and next actions without deciding that the user is mistaken or that another person is at fault.
 
 ### What works
+- Steps 1 and 2 use neutral blank writing areas without suggested answers
+- Step 4 groups expanded choices into feelings, body reactions, and urges
+- Step 5 includes a broader set of emotional, relational, practical, and protective needs
+- Step 6 asks “What do you want to do next?” and uses literal action wording
 - Forward and back navigation
 - Skip and “I don’t know” at every step
-- Example text insertion
 - Multi-select feelings/urges and needs
 - Single-select next action
 - LocalStorage progress preservation
