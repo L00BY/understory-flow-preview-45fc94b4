@@ -79,6 +79,10 @@ test('pothos illustration uses natural variation, veins, marbling, depth, and dr
   assert.match(html, /class="leafVein"/);
   assert.match(html, /class="leafMarbling"/);
   assert.match(html, /class="dryMottle"/);
+  assert.match(html, /\.graphVine\{[^}]*stroke-width:2/);
+  assert.match(html, /\.graphVine--fine\{stroke-width:1\.15/);
+  assert.match(html, /\.centralStem\{[^}]*stroke-width:3/);
+  assert.match(html, /node\.type==='category'\?18:node\.type==='trait'\?13:9/);
   assert.match(html, /function naturalLeafShape/);
 });
 
@@ -143,5 +147,5 @@ test('every screen paperizes the answer and interaction area, not question headi
 });
 
 test('offline cache is bumped for centred graph and shared spiral context', () => {
-  assert.match(read('service-worker.js'), /understory-shell-v9/);
+  assert.match(read('service-worker.js'), /understory-shell-v10/);
 });
