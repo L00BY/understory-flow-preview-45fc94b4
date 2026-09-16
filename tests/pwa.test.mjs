@@ -42,7 +42,7 @@ test('app opens into a connected Home, journal, clarity, and settings shell', ()
   assert.match(html, /id="homeClarity"/);
   assert.match(html, /id="homeJournal"/);
   assert.match(html, /function renderJournal/);
-  assert.match(html, /Add a part of me/);
+  assert.match(html, /Grow a new branch/);
   assert.match(html, /Grow this branch/);
 });
 
@@ -53,6 +53,21 @@ test('settings contain local privacy and installation controls but no notificati
   assert.doesNotMatch(html, /Notification\.requestPermission/);
   assert.doesNotMatch(html, /Enable notifications/);
   assert.match(html, /nothing is sent to a server/i);
+});
+
+test('journal graph renders one marbled pothos with botanical vines and outcome leaves', () => {
+  const html = read('index.html');
+  assert.match(html, /function renderCentralPothos/);
+  assert.match(html, /function renderPothosLeaf/);
+  assert.match(html, /function renderVine/);
+  assert.match(html, /class="centralPothos"/);
+  assert.match(html, /class="graphVine\$\{fine\}"/);
+  assert.match(html, /class="pothosLeaf/);
+  assert.match(html, /leaf--healthy/);
+  assert.match(html, /leaf--dry/);
+  assert.doesNotMatch(html, /class="graphNode"/);
+  assert.doesNotMatch(html, /string of pearls/i);
+  assert.doesNotMatch(html, /string of hearts/i);
 });
 
 test('journal graph is immovable while reading and only explicit controls change zoom', () => {
@@ -67,7 +82,8 @@ test('journal graph is immovable while reading and only explicit controls change
   assert.doesNotMatch(html, /addEventListener\('pointerdown'/);
   assert.doesNotMatch(html, /addEventListener\('touchmove'/);
   assert.match(html, /\.stage\.graphStage\{overflow:hidden;overscroll-behavior:none/);
-  assert.match(html, /\.graphViewport\{height:250px;min-height:250px;flex-shrink:0/);
+  assert.match(html, /\.graphViewport\{height:190px;min-height:190px;flex-shrink:0/);
+  assert.match(html, /\.nodeDetail\{position:relative;height:80px;min-height:80px;overflow-y:auto;touch-action:pan-y/);
   assert.match(html, /touch-action:none/);
 });
 
@@ -115,5 +131,5 @@ test('every screen paperizes the answer and interaction area, not question headi
 });
 
 test('offline cache is bumped for centred graph and shared spiral context', () => {
-  assert.match(read('service-worker.js'), /understory-shell-v7/);
+  assert.match(read('service-worker.js'), /understory-shell-v8/);
 });

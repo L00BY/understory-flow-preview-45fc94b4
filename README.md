@@ -32,9 +32,11 @@ Every screen now leaves its main question/heading directly on the botanical page
 
 The route begins with one open **Tell me what’s happening** field. That entry becomes shared local context for distinct support paths instead of being collected repeatedly. **I might do something impulsive** asks only what is being held, then opens the real draft editor immediately. **Stay with me through the peak** begins with low-demand support and an optional one-minute guided screen without trigger analysis. **Help me understand why this hit me** reuses the shared entry as the event and begins with the next distinct question. A later-action draft and reviewed Ask Binch handoff also reuse the same context.
 
-## My journal graph
+## My journal map
 
-My journal uses a radial SVG node network inspired by Courtney’s reference image. **Me** is the central node; colour-coded categories radiate outward; traits extend from categories; green helpful and rust painful outcome dots extend from traits. The revised graph uses a bounded SVG camera and deliberately has no free drag or pinch movement. Tapping a node updates its details without moving the graph. Only the explicit plus/minus controls change zoom, centred on the selected node, while **Me** restores the full map. The whole journal graph screen is locked against vertical scrolling during interaction. No text moves inside the SVG: full node details and direct connections stay in one fixed centred panel below a non-shrinking 250px canvas. Invisible hit circles enlarge small-dot touch targets.
+My journal is rendered as one central marbled pothos. Every category is a curved main vine from that plant; saved parts are olive offshoot leaves; helpful outcomes are healthy green leaves; and painful outcomes are dry rust leaves. No other plant species are used in the map. Existing `state.selfMap` records feed the botanical renderer without migration or data loss.
+
+The map uses a bounded SVG camera and deliberately has no free drag or pinch movement. Tapping a leaf updates the fixed-height details panel without moving the plant. Long details scroll inside that panel rather than shifting the page. Only the explicit plus/minus controls change zoom, while **Me** restores the complete pothos. The controls sit outside the plant canvas, visible leaf shapes have larger transparent hit areas, and the journal stage itself cannot scroll during map use.
 
 ## Interactive locked draft
 
