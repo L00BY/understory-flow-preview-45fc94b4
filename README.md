@@ -34,7 +34,7 @@ The route begins with one open **Tell me what’s happening** field. That entry 
 
 ## My journal map
 
-My journal is rendered as one central marbled pothos. Every category is a curved main vine from that plant; saved parts are olive offshoot leaves; helpful outcomes are healthy green leaves; and painful outcomes are dry rust leaves. No other plant species are used in the map. Existing `state.selfMap` records feed the botanical renderer without migration or data loss.
+My journal is rendered as one central marbled pothos. Every category is a curved main vine from that plant; saved parts are olive offshoot leaves; helpful outcomes are healthy green leaves; and painful outcomes are dry rust leaves. No other plant species are used in the map. The botanical SVG uses varied asymmetric leaf silhouettes, layered gradients, natural veins, irregular cream marbling, soft leaf shadows, dry-leaf mottling, and a shaded ceramic pot rather than flat repeated icons. Existing `state.selfMap` records feed the renderer without migration or data loss.
 
 The map uses a bounded SVG camera and deliberately has no free drag or pinch movement. Tapping a leaf updates the fixed-height details panel without moving the plant. Long details scroll inside that panel rather than shifting the page. Only the explicit plus/minus controls change zoom, while **Me** restores the complete pothos. The controls sit outside the plant canvas, visible leaf shapes have larger transparent hit areas, and the journal stage itself cannot scroll during map use.
 

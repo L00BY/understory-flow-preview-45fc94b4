@@ -70,6 +70,18 @@ test('journal graph renders one marbled pothos with botanical vines and outcome 
   assert.doesNotMatch(html, /string of hearts/i);
 });
 
+test('pothos illustration uses natural variation, veins, marbling, depth, and dry texture', () => {
+  const html = read('index.html');
+  assert.match(html, /linearGradient id="leafHealthy"/);
+  assert.match(html, /linearGradient id="leafDeep"/);
+  assert.match(html, /linearGradient id="ceramicPot"/);
+  assert.match(html, /filter id="leafShadow"/);
+  assert.match(html, /class="leafVein"/);
+  assert.match(html, /class="leafMarbling"/);
+  assert.match(html, /class="dryMottle"/);
+  assert.match(html, /function naturalLeafShape/);
+});
+
 test('journal graph is immovable while reading and only explicit controls change zoom', () => {
   const html = read('index.html');
   assert.match(html, /function clampGraphCamera/);
@@ -131,5 +143,5 @@ test('every screen paperizes the answer and interaction area, not question headi
 });
 
 test('offline cache is bumped for centred graph and shared spiral context', () => {
-  assert.match(read('service-worker.js'), /understory-shell-v8/);
+  assert.match(read('service-worker.js'), /understory-shell-v9/);
 });
